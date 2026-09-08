@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You | Qahveh Herbal Tea</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream: #f2ede2;
+      --ink: #263027;
+      --forest: #384235;
+      --brown: #745b46;
+      --white: #fffdf8;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: "Inter", sans-serif;
+      display: grid;
+      place-items: center;
+      padding: 30px;
+    }
+
+    .card {
+      width: min(900px, 100%);
+      text-align: center;
+      padding: 80px 30px;
+    }
+
+    .eyebrow {
+      color: var(--brown);
+      font-size: .76rem;
+      font-weight: 600;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(4.2rem, 9vw, 8rem);
+      font-weight: 500;
+      line-height: .88;
+      letter-spacing: -.055em;
+    }
+
+    p {
+      max-width: 620px;
+      margin: 28px auto 0;
+      color: rgba(38,48,39,.72);
+      line-height: 1.7;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 34px;
+    }
+
+    a {
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 0 24px;
+      border-radius: 999px;
+      font-size: .88rem;
+    }
+
+    .primary { background: var(--forest); color: var(--white); }
+    .secondary { color: var(--ink); border: 1px solid rgba(38,48,39,.2); }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <p class="eyebrow">Request received</p>
+    <h1>Thank you.</h1>
+    <p>
+      Your Qahveh order request has been sent. Qahveh will follow up with you
+      to confirm availability and the details of your order.
+    </p>
+
+    <div class="actions">
+      <a class="primary" href="index.html">Back to Qahveh</a>
+      <a class="secondary" href="https://www.instagram.com/qahveherbaltea/" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </main>
+</body>
+</html>

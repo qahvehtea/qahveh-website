@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Order Request | Qahveh Herbal Tea</title>
+  <meta name="description" content="Request an order of Qahveh Herbal Tea for pickup or GTA delivery." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream: #f2ede2;
+      --paper: #e8e0d0;
+      --ink: #263027;
+      --forest: #384235;
+      --brown: #745b46;
+      --gold: #ad8a55;
+      --line: rgba(38, 48, 39, 0.18);
+      --white: #fffdf8;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background:
+        radial-gradient(circle at top left, rgba(255,255,255,.55), transparent 34%),
+        var(--cream);
+      color: var(--ink);
+      font-family: "Inter", sans-serif;
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { width: 100%; display: block; }
+
+    .container {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .announcement {
+      background: var(--forest);
+      color: var(--white);
+      text-align: center;
+      padding: 10px 20px;
+      font-size: .78rem;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(242, 237, 226, .93);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    nav {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 2.05rem;
+      font-weight: 600;
+      letter-spacing: -.04em;
+    }
+
+    .brand span {
+      font-family: "Inter", sans-serif;
+      font-size: .72rem;
+      font-weight: 400;
+      letter-spacing: .08em;
+      margin-left: 5px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      font-size: .87rem;
+    }
+
+    .nav-button {
+      border: 1px solid var(--forest);
+      padding: 10px 18px;
+      border-radius: 999px;
+    }
+
+    main { padding: 68px 0 110px; }
+
+    .order-layout {
+      display: grid;
+      grid-template-columns: .88fr 1.12fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .eyebrow {
+      color: var(--brown);
+      font-size: .76rem;
+      font-weight: 600;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    h1, h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 500;
+    }
+
+    h1 {
+      font-size: clamp(4rem, 6.7vw, 6.8rem);
+      line-height: .9;
+      letter-spacing: -.055em;
+    }
+
+    .lead {
+      margin-top: 26px;
+      max-width: 540px;
+      color: rgba(38,48,39,.74);
+      font-size: 1.02rem;
+    }
+
+    .side-image {
+      margin-top: 38px;
+      border-radius: 220px 220px 18px 18px;
+      overflow: hidden;
+      min-height: 420px;
+      background: var(--paper);
+      box-shadow: 0 26px 65px rgba(58,52,42,.11);
+    }
+
+    .side-image img {
+      height: 460px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .mini-note {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+      color: rgba(38,48,39,.69);
+      font-size: .9rem;
+    }
+
+    .form-card {
+      background: rgba(255,253,248,.62);
+      border: 1px solid var(--line);
+      padding: 42px;
+      box-shadow: 0 24px 65px rgba(58,52,42,.08);
+    }
+
+    .form-card h2 {
+      font-size: 2.7rem;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+
+    .form-intro {
+      color: rgba(38,48,39,.67);
+      margin-bottom: 32px;
+      font-size: .94rem;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .field { margin-bottom: 20px; }
+
+    label {
+      display: block;
+      font-size: .78rem;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      border: 1px solid rgba(38,48,39,.22);
+      background: #fffdf8;
+      color: var(--ink);
+      font: inherit;
+      padding: 14px 15px;
+      border-radius: 0;
+      outline: none;
+      transition: border-color .2s ease, box-shadow .2s ease;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--forest);
+      box-shadow: 0 0 0 3px rgba(56,66,53,.08);
+    }
+
+    textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 0 26px;
+      border: 0;
+      border-radius: 999px;
+      background: var(--forest);
+      color: var(--white);
+      cursor: pointer;
+      font: inherit;
+      font-size: .9rem;
+      transition: transform .2s ease, background .2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      background: #293329;
+    }
+
+    .privacy {
+      margin-top: 15px;
+      color: rgba(38,48,39,.56);
+      font-size: .78rem;
+    }
+
+    .honeypot { display: none !important; }
+
+    footer {
+      background: #222b24;
+      color: #f2ede2;
+      padding: 56px 0 32px;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      align-items: flex-end;
+    }
+
+    .footer-brand {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 2.7rem;
+    }
+
+    .footer-copy {
+      color: rgba(255,255,255,.56);
+      max-width: 520px;
+      font-size: .85rem;
+      margin-top: 8px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 22px;
+      font-size: .85rem;
+      color: rgba(255,255,255,.78);
+    }
+
+    @media (max-width: 850px) {
+      .order-layout { grid-template-columns: 1fr; gap: 48px; }
+      .side-image { max-width: 620px; }
+      .nav-links a:not(.nav-button) { display: none; }
+    }
+
+    @media (max-width: 600px) {
+      .container { width: min(100% - 28px, 1180px); }
+      nav { min-height: 68px; }
+      .brand { font-size: 1.7rem; }
+      .brand span { display: none; }
+      main { padding-top: 45px; }
+      h1 { font-size: 4rem; }
+      .form-card { padding: 26px 20px; }
+      .grid-2 { grid-template-columns: 1fr; gap: 0; }
+      .side-image img { height: 390px; }
+      .footer-row { flex-direction: column; align-items: flex-start; }
+      .footer-links { flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+  <div class="announcement">Qahveh Herbal Tea · Shipping available in the GTA</div>
+
+  <header>
+    <nav class="container">
+      <a class="brand" href="index.html">Qahveh.<span>Herbal Tea</span></a>
+      <div class="nav-links">
+        <a href="index.html#tea">The Tea</a>
+        <a href="index.html#story">Our Story</a>
+        <a href="https://www.instagram.com/qahveherbaltea/" target="_blank" rel="noopener">Instagram</a>
+        <a class="nav-button" href="order.html">Order</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container order-layout">
+      <section>
+        <p class="eyebrow">Order Qahveh</p>
+        <h1>Request<br>your next<br>cup.</h1>
+        <p class="lead">
+          Tell us what you need and Qahveh will follow up to confirm availability,
+          pickup or GTA delivery, and the details of your order.
+        </p>
+
+        <div class="side-image">
+          <img src="images/product-indoor-duo.png" alt="Qahveh Herbal Tea packages" />
+        </div>
+
+        <p class="mini-note">
+          This form is an order request, not an automatic checkout. Qahveh will
+          contact you to confirm the order before anything is finalized.
+        </p>
+      </section>
+
+      <section class="form-card">
+        <h2>Order request</h2>
+        <p class="form-intro">Fields marked with * are required.</p>
+
+        <form action="https://formsubmit.co/qahvehtea@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="New Qahveh Order Request">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_next" value="https://qahveh.ca/thanks.html">
+          <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off">
+
+          <div class="grid-2">
+            <div class="field">
+              <label for="name">Full name *</label>
+              <input id="name" name="name" type="text" autocomplete="name" required>
+            </div>
+
+            <div class="field">
+              <label for="email">Email *</label>
+              <input id="email" name="email" type="email" autocomplete="email" required>
+            </div>
+          </div>
+
+          <div class="grid-2">
+            <div class="field">
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel">
+            </div>
+
+            <div class="field">
+              <label for="quantity">Packages *</label>
+              <input id="quantity" name="quantity" type="number" min="1" step="1" value="1" required>
+            </div>
+          </div>
+
+          <div class="grid-2">
+            <div class="field">
+              <label for="delivery">Delivery method *</label>
+              <select id="delivery" name="delivery_method" required>
+                <option value="" selected disabled>Select one</option>
+                <option value="GTA delivery">GTA delivery</option>
+                <option value="Pickup">Pickup</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="location">City / postal code *</label>
+              <input id="location" name="city_postal_code" type="text" autocomplete="postal-code" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="notes">Notes or special request</label>
+            <textarea id="notes" name="notes" placeholder="Anything Qahveh should know about your request?"></textarea>
+          </div>
+
+          <button class="button" type="submit">Send Order Request</button>
+
+          <p class="privacy">
+            Your information is used only to respond to this Qahveh order request.
+          </p>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <div>
+        <div class="footer-brand">Qahveh.</div>
+        <p class="footer-copy">
+          Herbal tea shaped by tradition, botanical inspiration and the timeless pleasure of sharing a cup.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="https://www.instagram.com/qahveherbaltea/" target="_blank" rel="noopener">Instagram</a>
+        <a href="mailto:qahvehtea@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
