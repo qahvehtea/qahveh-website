@@ -225,39 +225,21 @@
     }
 
     .hero-art {
-      position: relative;
       min-height: 600px;
       border-radius: 48% 48% 28px 28px;
       overflow: hidden;
-      background:
-        radial-gradient(circle at 50% 25%, #f8f3e7 0 17%, transparent 18%),
-        linear-gradient(145deg, #d8cfba, #b8aa8b);
       border: 1px solid rgba(38,48,39,.1);
       box-shadow: 0 34px 80px rgba(58, 52, 42, .13);
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
+      background: #d8cfba;
     }
 
-    .botanical {
-      position: absolute;
-      font-family: "Cormorant Garamond", serif;
-      color: rgba(56, 66, 53, .22);
-      font-size: 14rem;
-      line-height: 1;
-      user-select: none;
-    }
-
-    .botanical.one {
-      left: -45px;
-      top: 120px;
-      transform: rotate(-25deg);
-    }
-
-    .botanical.two {
-      right: -30px;
-      top: 35px;
-      transform: rotate(34deg);
+    .hero-photo {
+      width: 100%;
+      height: 100%;
+      min-height: 600px;
+      object-fit: cover;
+      object-position: center;
+      display: block;
     }
 
     .tea-pack {
@@ -381,28 +363,17 @@
       min-height: 610px;
       background: #e6dece;
       border-radius: 280px 280px 22px 22px;
-      position: relative;
       overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      box-shadow: 0 28px 70px rgba(0,0,0,.18);
     }
 
-    .product-visual .tea-pack {
-      transform: rotate(-5deg);
-      margin: 0;
-    }
-
-    .tea-cup {
-      width: 165px;
-      height: 95px;
-      border-radius: 15px 15px 80px 80px;
-      background: linear-gradient(#b27335 0 18%, #dba65b 20% 100%);
-      position: absolute;
-      right: 45px;
-      bottom: 72px;
-      opacity: .88;
-      box-shadow: inset 0 4px rgba(255,255,255,.18);
+    .product-photo {
+      width: 100%;
+      height: 100%;
+      min-height: 610px;
+      object-fit: cover;
+      object-position: center;
+      display: block;
     }
 
     .product-copy .eyebrow {
@@ -684,12 +655,6 @@
         min-height: 470px;
       }
 
-      .tea-cup {
-        width: 130px;
-        height: 75px;
-        right: 15px;
-      }
-
       .quote-card {
         padding: 32px;
       }
@@ -782,18 +747,11 @@
       </div>
 
       <div class="hero-art">
-        <div class="botanical one">❧</div>
-        <div class="botanical two">❧</div>
-
-        <div class="tea-pack">
-          <div>
-            <div class="pack-logo">Qahveh.</div>
-            <div class="pack-small">
-              Herbal Tea<br><br>
-              A Botanical Blend
-            </div>
-          </div>
-        </div>
+        <img
+          src="images/hero-product-ivy.jpg"
+          alt="Qahveh Herbal Tea among ivy leaves"
+          class="hero-photo"
+        >
       </div>
     </section>
 
@@ -857,17 +815,11 @@
       <div class="container product-grid">
 
         <div class="product-visual">
-          <div class="tea-pack">
-            <div>
-              <div class="pack-logo">Qahveh.</div>
-              <div class="pack-small">
-                Herbal Tea<br><br>
-                Botanical Blend
-              </div>
-            </div>
-          </div>
-
-          <div class="tea-cup"></div>
+          <img
+            src="images/product-ivy-front-back.png"
+            alt="Front and back views of Qahveh Herbal Tea packaging"
+            class="product-photo"
+          >
         </div>
 
         <div class="product-copy">
