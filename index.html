@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Qahveh Herbal Tea</title>
+  <meta
+    name="description"
+    content="Discover Qahveh Herbal Tea — a thoughtfully crafted herbal tea inspired by tradition, botanicals, and the ritual of a good cup."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --cream: #f2ede2;
+      --paper: #e8e0d0;
+      --ink: #263027;
+      --forest: #384235;
+      --olive: #70745b;
+      --brown: #745b46;
+      --gold: #ad8a55;
+      --line: rgba(38, 48, 39, 0.18);
+      --white: #fffdf8;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at top left, rgba(255,255,255,.5), transparent 35%),
+        var(--cream);
+      color: var(--ink);
+      font-family: "Inter", sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    /* Announcement */
+
+    .announcement {
+      background: var(--forest);
+      color: var(--white);
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 0.78rem;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    /* Navigation */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(242, 237, 226, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    nav {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 2.05rem;
+      font-weight: 600;
+      letter-spacing: -0.04em;
+    }
+
+    .brand span {
+      font-size: 0.72rem;
+      font-family: "Inter", sans-serif;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      margin-left: 5px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      font-size: 0.87rem;
+    }
+
+    .nav-links a {
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 1px;
+      background: var(--forest);
+      transition: width .25s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-button {
+      border: 1px solid var(--forest);
+      padding: 10px 18px;
+      border-radius: 999px;
+    }
+
+    .nav-button::after {
+      display: none;
+    }
+
+    /* Hero */
+
+    .hero {
+      min-height: 760px;
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      align-items: center;
+      gap: 70px;
+      padding: 70px 0;
+    }
+
+    .eyebrow {
+      color: var(--brown);
+      font-size: 0.76rem;
+      font-weight: 600;
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 500;
+    }
+
+    h1 {
+      font-size: clamp(4rem, 7.2vw, 7.2rem);
+      line-height: 0.87;
+      letter-spacing: -0.055em;
+      max-width: 800px;
+    }
+
+    .hero-description {
+      max-width: 600px;
+      margin-top: 30px;
+      font-size: 1.05rem;
+      color: rgba(38, 48, 39, 0.76);
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-top: 34px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 0 24px;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      transition: .2s ease;
+    }
+
+    .button-primary {
+      background: var(--forest);
+      color: var(--white);
+    }
+
+    .button-primary:hover {
+      transform: translateY(-2px);
+      background: #293329;
+    }
+
+    .button-secondary {
+      border: 1px solid var(--line);
+    }
+
+    .button-secondary:hover {
+      background: rgba(255,255,255,.4);
+    }
+
+    .hero-art {
+      position: relative;
+      min-height: 600px;
+      border-radius: 48% 48% 28px 28px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 50% 25%, #f8f3e7 0 17%, transparent 18%),
+        linear-gradient(145deg, #d8cfba, #b8aa8b);
+      border: 1px solid rgba(38,48,39,.1);
+      box-shadow: 0 34px 80px rgba(58, 52, 42, .13);
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
+
+    .botanical {
+      position: absolute;
+      font-family: "Cormorant Garamond", serif;
+      color: rgba(56, 66, 53, .22);
+      font-size: 14rem;
+      line-height: 1;
+      user-select: none;
+    }
+
+    .botanical.one {
+      left: -45px;
+      top: 120px;
+      transform: rotate(-25deg);
+    }
+
+    .botanical.two {
+      right: -30px;
+      top: 35px;
+      transform: rotate(34deg);
+    }
+
+    .tea-pack {
+      width: 235px;
+      height: 390px;
+      border-radius: 18px 18px 28px 28px;
+      background: linear-gradient(145deg, #334138, #19241e);
+      margin-bottom: 52px;
+      position: relative;
+      box-shadow: 0 35px 60px rgba(0,0,0,.22);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 25px;
+      color: #ece4d4;
+      text-align: center;
+    }
+
+    .tea-pack::before {
+      content: "";
+      position: absolute;
+      top: 18px;
+      left: 14px;
+      right: 14px;
+      height: 8px;
+      border-top: 1px solid rgba(255,255,255,.3);
+      border-bottom: 1px solid rgba(255,255,255,.18);
+    }
+
+    .pack-logo {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+    }
+
+    .pack-small {
+      font-size: .67rem;
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      color: rgba(255,255,255,.65);
+    }
+
+    /* Intro */
+
+    .section {
+      padding: 120px 0;
+    }
+
+    .intro {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: .7fr 1.3fr;
+      gap: 90px;
+      align-items: start;
+    }
+
+    .section-number {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.1rem;
+      color: var(--brown);
+    }
+
+    .intro h2,
+    .story h2,
+    .ritual h2 {
+      font-size: clamp(3.2rem, 5.5vw, 5.7rem);
+      line-height: .95;
+      letter-spacing: -.045em;
+    }
+
+    .intro-copy {
+      font-size: 1.08rem;
+      color: rgba(38,48,39,.78);
+      margin-top: 28px;
+      max-width: 760px;
+    }
+
+    /* Cards */
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 65px;
+    }
+
+    .feature {
+      border-top: 1px solid var(--forest);
+      padding: 24px 0 10px;
+    }
+
+    .feature h3 {
+      font-size: 1.85rem;
+      margin-bottom: 9px;
+    }
+
+    .feature p {
+      color: rgba(38,48,39,.68);
+      font-size: .93rem;
+    }
+
+    /* Product */
+
+    .product-section {
+      background: var(--forest);
+      color: var(--white);
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 90px;
+      align-items: center;
+    }
+
+    .product-visual {
+      min-height: 610px;
+      background: #e6dece;
+      border-radius: 280px 280px 22px 22px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .product-visual .tea-pack {
+      transform: rotate(-5deg);
+      margin: 0;
+    }
+
+    .tea-cup {
+      width: 165px;
+      height: 95px;
+      border-radius: 15px 15px 80px 80px;
+      background: linear-gradient(#b27335 0 18%, #dba65b 20% 100%);
+      position: absolute;
+      right: 45px;
+      bottom: 72px;
+      opacity: .88;
+      box-shadow: inset 0 4px rgba(255,255,255,.18);
+    }
+
+    .product-copy .eyebrow {
+      color: #d9bd8d;
+    }
+
+    .product-copy h2 {
+      font-size: clamp(3.4rem, 5vw, 5.7rem);
+      line-height: .93;
+      letter-spacing: -.045em;
+      margin-bottom: 27px;
+    }
+
+    .product-copy p {
+      color: rgba(255,255,255,.73);
+      max-width: 560px;
+    }
+
+    .product-details {
+      margin-top: 42px;
+      border-top: 1px solid rgba(255,255,255,.22);
+    }
+
+    .detail-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 25px;
+      padding: 18px 0;
+      border-bottom: 1px solid rgba(255,255,255,.16);
+      font-size: .9rem;
+    }
+
+    .detail-row span:last-child {
+      color: rgba(255,255,255,.68);
+      text-align: right;
+    }
+
+    /* Story */
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 80px;
+    }
+
+    .story-copy p {
+      max-width: 690px;
+      color: rgba(38,48,39,.72);
+      font-size: 1rem;
+      margin-top: 25px;
+    }
+
+    .quote-card {
+      background: var(--paper);
+      padding: 46px;
+      border-radius: 4px;
+      align-self: end;
+    }
+
+    .quote-card blockquote {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 2.2rem;
+      line-height: 1.08;
+    }
+
+    .quote-card p {
+      margin-top: 24px;
+      font-size: .72rem;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      color: var(--brown);
+    }
+
+    /* Ritual */
+
+    .ritual {
+      background: #dfd6c3;
+    }
+
+    .ritual-header {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 70px;
+    }
+
+    .ritual-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(38,48,39,.18);
+      border: 1px solid rgba(38,48,39,.18);
+    }
+
+    .step {
+      background: #dfd6c3;
+      padding: 50px 40px;
+      min-height: 270px;
+    }
+
+    .step-number {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.2rem;
+      color: var(--brown);
+      margin-bottom: 60px;
+    }
+
+    .step h3 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .step p {
+      color: rgba(38,48,39,.67);
+      font-size: .92rem;
+    }
+
+    /* CTA */
+
+    .cta {
+      text-align: center;
+      padding: 140px 20px;
+    }
+
+    .cta h2 {
+      font-size: clamp(4rem, 7vw, 7rem);
+      line-height: .9;
+      letter-spacing: -.055em;
+      max-width: 950px;
+      margin: 0 auto;
+    }
+
+    .cta p {
+      max-width: 620px;
+      margin: 30px auto;
+      color: rgba(38,48,39,.7);
+    }
+
+    /* Footer */
+
+    footer {
+      background: #222b24;
+      color: #f2ede2;
+      padding: 70px 0 35px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr .75fr .75fr;
+      gap: 55px;
+      margin-bottom: 80px;
+    }
+
+    .footer-brand {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 3rem;
+    }
+
+    .footer-sub {
+      max-width: 430px;
+      color: rgba(255,255,255,.6);
+      margin-top: 12px;
+      font-size: .9rem;
+    }
+
+    .footer-column h4 {
+      font-size: .72rem;
+      text-transform: uppercase;
+      letter-spacing: .15em;
+      color: rgba(255,255,255,.45);
+      margin-bottom: 18px;
+    }
+
+    .footer-column a {
+      display: block;
+      margin: 9px 0;
+      color: rgba(255,255,255,.82);
+      font-size: .9rem;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.13);
+      padding-top: 25px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      font-size: .75rem;
+      color: rgba(255,255,255,.45);
+    }
+
+    /* Responsive */
+
+    @media (max-width: 900px) {
+      .nav-links a:not(.nav-button) {
+        display: none;
+      }
+
+      .hero,
+      .product-grid,
+      .intro-grid,
+      .story-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        gap: 45px;
+        padding-top: 55px;
+      }
+
+      .hero-art {
+        min-height: 520px;
+      }
+
+      .intro-grid {
+        gap: 30px;
+      }
+
+      .features,
+      .ritual-steps {
+        grid-template-columns: 1fr;
+      }
+
+      .product-grid {
+        gap: 55px;
+      }
+
+      .product-visual {
+        min-height: 520px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-grid > :first-child {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        width: min(100% - 28px, 1180px);
+      }
+
+      nav {
+        min-height: 68px;
+      }
+
+      .brand {
+        font-size: 1.7rem;
+      }
+
+      .brand span {
+        display: none;
+      }
+
+      h1 {
+        font-size: 4rem;
+      }
+
+      .hero-art {
+        min-height: 455px;
+        border-radius: 44% 44% 18px 18px;
+      }
+
+      .tea-pack {
+        width: 195px;
+        height: 330px;
+      }
+
+      .section {
+        padding: 85px 0;
+      }
+
+      .feature {
+        padding-bottom: 24px;
+      }
+
+      .product-visual {
+        min-height: 470px;
+      }
+
+      .tea-cup {
+        width: 130px;
+        height: 75px;
+        right: 15px;
+      }
+
+      .quote-card {
+        padding: 32px;
+      }
+
+      .step {
+        min-height: 220px;
+      }
+
+      .step-number {
+        margin-bottom: 35px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid > :first-child {
+        grid-column: auto;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="announcement">
+    Qahveh Herbal Tea · Shipping available in the GTA
+  </div>
+
+  <header>
+    <nav class="container">
+      <a class="brand" href="#">
+        Qahveh.<span>Herbal Tea</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#tea">The Tea</a>
+        <a href="#story">Our Story</a>
+        <a href="#ritual">The Ritual</a>
+        <a href="https://www.instagram.com/qahveherbaltea/" target="_blank">
+          Instagram
+        </a>
+        <a
+          class="nav-button"
+          href="https://www.instagram.com/qahveherbaltea/"
+          target="_blank"
+        >
+          Order
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+
+    <section class="container hero">
+      <div>
+        <p class="eyebrow">Herbal tea · Toronto & GTA</p>
+
+        <h1>
+          Tradition,<br>
+          steeped for<br>
+          today.
+        </h1>
+
+        <p class="hero-description">
+          Qahveh is a herbal tea inspired by the timeless ritual of gathering,
+          brewing and sharing a thoughtful cup.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button button-primary" href="#tea">
+            Discover Qahveh
+          </a>
+
+          <a
+            class="button button-secondary"
+            href="https://www.instagram.com/qahveherbaltea/"
+            target="_blank"
+          >
+            Follow on Instagram
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-art">
+        <div class="botanical one">❧</div>
+        <div class="botanical two">❧</div>
+
+        <div class="tea-pack">
+          <div>
+            <div class="pack-logo">Qahveh.</div>
+            <div class="pack-small">
+              Herbal Tea<br><br>
+              A Botanical Blend
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTRO -->
+
+    <section class="section intro">
+      <div class="container intro-grid">
+
+        <div>
+          <div class="section-number">01 — The philosophy</div>
+        </div>
+
+        <div>
+          <p class="eyebrow">A cup with a story</p>
+
+          <h2>
+            More than tea.<br>
+            A daily ritual.
+          </h2>
+
+          <p class="intro-copy">
+            Qahveh brings together heritage, botanical tradition and the
+            comfort of a warm cup. Designed to be enjoyed slowly, shared
+            generously and returned to often.
+          </p>
+
+          <div class="features">
+
+            <div class="feature">
+              <h3>Botanical</h3>
+              <p>
+                A carefully considered herbal blend with a distinct,
+                aromatic character.
+              </p>
+            </div>
+
+            <div class="feature">
+              <h3>Rooted</h3>
+              <p>
+                Inspired by old-world tea culture, hospitality and
+                traditional rituals of gathering.
+              </p>
+            </div>
+
+            <div class="feature">
+              <h3>Intentional</h3>
+              <p>
+                Made for moments that ask us to slow down and enjoy
+                what is in front of us.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCT -->
+
+    <section id="tea" class="section product-section">
+      <div class="container product-grid">
+
+        <div class="product-visual">
+          <div class="tea-pack">
+            <div>
+              <div class="pack-logo">Qahveh.</div>
+              <div class="pack-small">
+                Herbal Tea<br><br>
+                Botanical Blend
+              </div>
+            </div>
+          </div>
+
+          <div class="tea-cup"></div>
+        </div>
+
+        <div class="product-copy">
+          <p class="eyebrow">The signature blend</p>
+
+          <h2>
+            Qahveh<br>
+            Herbal Tea
+          </h2>
+
+          <p>
+            A fragrant herbal infusion created for everyday enjoyment.
+            Brew it hot, let the aroma open, and make it part of your
+            own ritual.
+          </p>
+
+          <div class="product-details">
+
+            <div class="detail-row">
+              <span>Style</span>
+              <span>Herbal infusion</span>
+            </div>
+
+            <div class="detail-row">
+              <span>Enjoy</span>
+              <span>Hot or chilled</span>
+            </div>
+
+            <div class="detail-row">
+              <span>Availability</span>
+              <span>Toronto & GTA</span>
+            </div>
+
+            <div class="detail-row">
+              <span>Ordering</span>
+              <span>Contact Qahveh directly</span>
+            </div>
+
+          </div>
+
+          <div class="hero-actions">
+            <a
+              class="button"
+              style="background:#f2ede2;color:#263027;"
+              href="https://www.instagram.com/qahveherbaltea/"
+              target="_blank"
+            >
+              Contact to Purchase
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STORY -->
+
+    <section id="story" class="section story">
+      <div class="container story-grid">
+
+        <div class="story-copy">
+          <p class="eyebrow">Heritage & hospitality</p>
+
+          <h2>
+            Tea has always<br>
+            been about more<br>
+            than the cup.
+          </h2>
+
+          <p>
+            Across generations, tea has marked conversations, visits,
+            celebrations and quiet moments at home. Qahveh draws on that
+            spirit — presenting an herbal blend through a visual language
+            shaped by history, art and botanical tradition.
+          </p>
+
+          <p>
+            The result is something familiar yet distinctly its own:
+            a tea meant not simply to be consumed, but experienced.
+          </p>
+        </div>
+
+        <div class="quote-card">
+          <blockquote>
+            “Time made it timeless.”
+          </blockquote>
+
+          <p>Qahveh</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- RITUAL -->
+
+    <section id="ritual" class="section ritual">
+      <div class="container">
+
+        <div class="ritual-header">
+          <p class="eyebrow">How to enjoy</p>
+
+          <h2>
+            Make time<br>
+            for the ritual.
+          </h2>
+        </div>
+
+        <div class="ritual-steps">
+
+          <div class="step">
+            <div class="step-number">01</div>
+            <h3>Prepare</h3>
+            <p>
+              Add your preferred amount of Qahveh herbal tea to a cup
+              or teapot.
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">02</div>
+            <h3>Steep</h3>
+            <p>
+              Pour in hot water and allow the herbs time to infuse,
+              releasing their aroma and character.
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">03</div>
+            <h3>Enjoy</h3>
+            <p>
+              Serve warm and take your time — alone, with family,
+              or alongside good conversation.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ORDER -->
+
+    <section id="order" class="cta">
+      <p class="eyebrow">Bring Qahveh home</p>
+
+      <h2>
+        Your next cup<br>
+        starts here.
+      </h2>
+
+      <p>
+        Qahveh Herbal Tea is currently available by direct order.
+        Contact Qahveh on Instagram for availability, ordering and
+        GTA shipping information.
+      </p>
+
+      <a
+        class="button button-primary"
+        href="https://www.instagram.com/qahveherbaltea/"
+        target="_blank"
+      >
+        Contact Qahveh
+      </a>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+
+  <footer>
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div>
+          <div class="footer-brand">Qahveh.</div>
+
+          <p class="footer-sub">
+            Herbal tea shaped by tradition, botanical inspiration
+            and the timeless pleasure of sharing a cup.
+          </p>
+        </div>
+
+        <div class="footer-column">
+          <h4>Explore</h4>
+          <a href="#tea">The Tea</a>
+          <a href="#story">Our Story</a>
+          <a href="#ritual">The Ritual</a>
+        </div>
+
+        <div class="footer-column">
+          <h4>Connect</h4>
+          <a
+            href="https://www.instagram.com/qahveherbaltea/"
+            target="_blank"
+          >
+            Instagram
+          </a>
+          <a href="#order">Order Qahveh</a>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Qahveh. All rights reserved.</span>
+        <span>Qahveh Herbal Tea · Canada</span>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>
